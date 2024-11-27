@@ -5,12 +5,13 @@ const TabelComponent: React.FC = () => {
   const columns = [
     { key: "year", label: "Jaar" },
     { key: "profit", label: "Winst (€Miljoen)" },
-    { key: "expenses", label: "Uitgaven (€Miljoen)" }
+    { key: "expenses", label: "Uitgaven (€Miljoen)" },
+    { key: "revenue", label: " totale winst (€Miljoen)" }
   ];
 
   return (
     <div style={{ overflowX: "auto", padding: "20px" }}>
-      <table style={{ width: "100%", borderCollapse: "collapse" }}>
+      <table style={{ width: "75%", borderCollapse: "collapse" }}>
         <thead>
           <tr>
             {columns.map((column) => (

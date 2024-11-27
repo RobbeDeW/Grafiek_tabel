@@ -1,38 +1,35 @@
 import React from "react";
 import {
-  BarChart,
-  Bar,
+  ComposedChart,
   XAxis,
   YAxis,
   CartesianGrid,
   Tooltip,
   Legend,
+  Bar,
+  Line,
   ResponsiveContainer
 } from "recharts";
 import { financialData } from "./data";
 
-const ProfitBarChart: React.FC = () => {
+const ProfitComposedChart: React.FC = () => {
   return (
     <ResponsiveContainer width="100%" height={400}>
-      <BarChart
+      <ComposedChart
         data={financialData}
         margin={{ top: 20, right: 30, left: 20, bottom: 5 }}
       >
-        <CartesianGrid strokeDasharray="3 3" />
-        <XAxis
-          dataKey="year"
-          label={{ value: "Jaar", position: "insideBottom", offset: -5 }}
-        />
-        <YAxis
-          label={{ value: "Miljoenen (€)", angle: -90, position: "insideLeft" }}
-        />
-        <Tooltip formatter={(value: number) => `€${value}M`} />
-        <Legend verticalAlign="top" />
-        <Bar dataKey="profit" name="Winst" fill="#4caf50" />
-        <Bar dataKey="expenses" name="Uitgaven" fill="#f44336" />
-      </BarChart>
+        <CartesianGrid stroke="#f5f5f5" />
+        <XAxis dataKey="year" />
+        <YAxis />
+        <Tooltip />
+        <Legend />
+        <Bar dataKey="profit" barSize={40} fill="#4caf50" />
+        <Bar dataKey="expenses" barSize={40} fill="#f44336" />
+        <Line type="monotone" dataKey="revenue" stroke="#ff7300" />
+      </ComposedChart>
     </ResponsiveContainer>
   );
 };
 
-export default ProfitBarChart;
+export default ProfitComposedChart;

@@ -7,8 +7,10 @@ function App() {
   return (
     <div className="App">
       <h1>Bedrijfswinsten en Uitgaven per Jaar</h1>
-      <BarChartComponent />
-      <TabelComponent />
+      <div className="chart-and-table">
+        <BarChartComponent />
+        <TabelComponent />
+      </div>
     </div>
   );
 }
