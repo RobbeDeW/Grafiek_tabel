@@ -27,7 +27,7 @@ const ProfitBarChart: React.FC = () => {
           label={{ value: "Miljoenen (€)", angle: -90, position: "insideLeft" }}
         />
         <Tooltip formatter={(value: number) => `€${value}M`} />
-        <Legend />
+        <Legend verticalAlign="top" />
         <Bar dataKey="profit" name="Winst" fill="#4caf50" />
         <Bar dataKey="expenses" name="Uitgaven" fill="#f44336" />
       </BarChart>
